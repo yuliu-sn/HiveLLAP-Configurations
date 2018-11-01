@@ -1,0 +1,21 @@
+-- Previent failaures when processing large amount of data
+set hive.mapjoin.hybridgrace.hashtable=false;
+set hive.auto.convert.join=false;
+
+set hive.support.concurrency=true;
+set hive.cbo.enable=true;
+set hive.txn.strict.locking.mode=true;
+
+set hive.txn.strict.locking.mode=false;
+set hive.exec.max.dynamic.partitions=100000;
+set hive.exec.max.dynamic.partitions.pernode=100000;
+set hive.merge.mapredfiles=true;
+set hive.merge.smallfiles.avgsize=32000000;
+set hive.support.concurrency=true;
+
+-- Need to confirm
+-- set hive.exec.parallel=false;
+-- set hive.vectorized.execution.enabled=false;
+
+-- Sometimes need to limit the num of reducers
+-- set mapred.reduce.tasks=1;
